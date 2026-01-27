@@ -4,107 +4,228 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Conecta Coca-Cola</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
 <style>
-  /* Fondo dinámico */
-  @keyframes bg {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-  body {margin:0; font-family:Arial,sans-serif; color:white; min-height:100vh;
-        background:linear-gradient(270deg,#B11217,#E41F26,#FF6A00,#E41F26,#B11217);
-        background-size:1000% 1000%; animation:bg 30s ease infinite;}
-  header {position:fixed; top:0; left:0; right:0; height:70px; background:#000;
-          display:flex; justify-content:center; align-items:center; font-weight:bold; letter-spacing:1px; box-shadow:0 4px 10px rgba(0,0,0,0.7); z-index:1000;}
-  main {padding-top:80px;}
-  .login {height:calc(100vh - 80px); display:flex; justify-content:center; align-items:center;}
-  .login-box {background:rgba(0,0,0,0.85); padding:3rem; border-radius:16px; width:330px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.6);}
-  .login-box input {width:100%; padding:.8rem; border-radius:10px; border:none; margin:1rem 0; text-align:center;}
-  .login-box button {width:100%; padding:.8rem; background:#E41F26; border:none; border-radius:10px; font-weight:bold; color:white; cursor:pointer; transition:.3s;}
-  .login-box button:hover{background:#B11217;}
-  .error{color:#ffb3b3; font-size:.9rem; margin-top:.5rem;}
+@keyframes bg {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
 
-  .opciones {display:flex; justify-content:center; align-items:center; gap:3rem; height:calc(100vh - 80px);}
-  .opcion {width:260px;height:200px;background:rgba(0,0,0,0.85);border-radius:16px;display:flex;justify-content:center;align-items:center;font-size:1.8rem;font-weight:bold;cursor:pointer;transition:.3s;}
-  .opcion:hover {transform:translateY(-8px);}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:white;
+  min-height:100vh;
+  background:linear-gradient(270deg,#B11217,#E41F26,#FF6A00,#E41F26,#B11217);
+  background-size:1000% 1000%;
+  animation:bg 30s ease infinite;
+}
 
-  h1 {text-align:center; margin:2rem 0 1rem;}
-  .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.8rem; padding:2rem; max-width:1300px; margin:auto;}
-  .card-btn {background:rgba(0,0,0,0.85); border-radius:16px; min-height:140px; display:flex; justify-content:center; align-items:center; text-align:center; font-size:1.3rem; font-weight:bold; color:white; border:3px solid white; cursor:pointer; text-decoration:none; transition:.3s;}
-  .card-btn:hover {transform:translateY(-6px) scale(1.05); background:rgba(0,0,0,0.95);}
+header{
+  position:fixed;
+  top:0; left:0; right:0;
+  height:70px;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+  letter-spacing:1px;
+  z-index:1000;
+}
+
+main{padding-top:80px}
+
+.login{
+  height:calc(100vh - 80px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.login-box{
+  background:rgba(0,0,0,.85);
+  padding:3rem;
+  border-radius:16px;
+  width:330px;
+  text-align:center;
+}
+
+.login-box input{
+  width:100%;
+  padding:.8rem;
+  border-radius:10px;
+  border:none;
+  margin:1rem 0;
+  text-align:center;
+}
+
+.login-box button{
+  width:100%;
+  padding:.8rem;
+  background:#E41F26;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+}
+
+.error{color:#ffb3b3;font-size:.9rem}
+
+.opciones{
+  height:calc(100vh - 80px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:3rem;
+}
+
+.opcion{
+  width:260px;
+  height:200px;
+  background:rgba(0,0,0,.85);
+  border-radius:16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:1.8rem;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+h1{text-align:center;margin:1rem 0}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.8rem;
+  padding:2rem;
+  max-width:1300px;
+  margin:auto;
+}
+
+.card-btn{
+  background:rgba(0,0,0,.85);
+  border-radius:16px;
+  min-height:140px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:white;
+  border:3px solid white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.card-btn:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+.back-btn{
+  display:inline-block;
+  margin:1rem auto;
+  padding:.6rem 1.4rem;
+  background:#000;
+  border:2px solid white;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.back-btn:hover{background:#222}
+.center{text-align:center}
 </style>
 </head>
+
 <body>
 
-<header>CONecta · Coca-Cola</header>
+<header>CONECTA · COCA-COLA</header>
 
-<main id="mainContent">
-  <!-- Login inicial -->
-  <section class="login" id="loginSection">
+<main id="main">
+  <!-- LOGIN -->
+  <section class="login">
     <div class="login-box">
       <h2>Acceso</h2>
       <input type="password" id="password" placeholder="Contraseña">
-      <button id="btnLogin">Entrar</button>
+      <button onclick="login()">Entrar</button>
       <div id="error" class="error"></div>
     </div>
   </section>
 </main>
 
 <script>
-  const PASS = "Conecta2025";
-  const main = document.getElementById("mainContent");
-  const errorDiv = document.getElementById("error");
-  document.getElementById("btnLogin").addEventListener("click", () => {
-    const p = document.getElementById("password").value;
-    if(p === PASS){
-      // Contraseña correcta → cargamos TODO el contenido
-      main.innerHTML = `
-      <!-- Opciones -->
-      <section id="opciones" class="opciones">
-        <div class="opcion" onclick="mostrarDescargables()">Descargables</div>
-        <div class="opcion" onclick="mostrarPublicos()">Públicos</div>
-      </section>
+const PASS = "Conecta2025";
+const main = document.getElementById("main");
 
-      <!-- Descargables -->
-      <section id="descargables" style="display:none;">
-        <h1>Descargables</h1>
-        <div class="grid">
-          <div class="card-btn">Tablero Digital</div>
-          <div class="card-btn">Resultado Digitalización</div>
-          <div class="card-btn">Promociones · Misiones · Gana Gana</div>
-          <div class="card-btn">Multicategorías</div>
-          <div class="card-btn">YOMP</div>
-          <div class="card-btn">ICE</div>
-          <div class="card-btn">Hogar (Verdes · Azules · Grises)</div>
-        </div>
-      </section>
-
-      <!-- Públicos -->
-      <section id="publicos" style="display:none;">
-        <h1>Tableros Coca-Cola</h1>
-        <div class="grid">
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiODdlNTk2NjYtYTJkYy00OTk3LTljM2UtZjcyNTg0YjdjNGI5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">Tablero Digital</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiMzk4OTJiYzUtMzA3OS00Njg5LWFjMTYtNjkxYWUyMTcxNmJiIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">Resultado Digitalización</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiYzAyYWI1N2YtMDIwNC00ZDlhLWE3NWUtZjhhNDY2MDRkZTIzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">Promociones · Misiones · Gana Gana</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiN2I3NDMxNDctNWJhNC00MDc5LWJhZDAtYjBlOWMxNzkyNGU4IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">Multicategorías</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiMjZlZmVhZjUtZmJmYy00NDg3LWFlOTktZjcwMTA2Yzc3ZWI3IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">YOMP</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiYjlkMWNkZjYtZWJjOS00YmU4LTk3MzgtZDQyYmQyYzdjYjhiIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">ICE</a>
-          <a class="card-btn" href="https://app.powerbi.com/view?r=eyJrIjoiODU1OWQwMjEtYzRiMy00NDFlLTg4NTMtZDg5YjQyZmQ1OTE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9" target="_blank">Hogar (Verdes · Azules · Grises)</a>
-        </div>
-      </section>
-      `;
-    } else {
-      errorDiv.innerText = "Contraseña incorrecta";
-    }
-  });
-
-  function mostrarDescargables(){
-    document.getElementById("descargables").style.display="block";
-    document.getElementById("publicos").style.display="none";
-    document.getElementById("opciones").style.display="none";
+function login(){
+  const p = document.getElementById("password").value;
+  if(p !== PASS){
+    document.getElementById("error").innerText = "Contraseña incorrecta";
+    return;
   }
-  function mostrarPublicos(){
-    document.getElementById("publicos").style.display="block";
-    document.getElementById("descargables").style.display="none";
-    document.getElementById("opciones").style.display="none";
-  }
+
+  main.innerHTML = `
+  <!-- MENU -->
+  <section id="menu" class="opciones">
+    <div class="opcion" onclick="showDesc()">Descargables</div>
+    <div class="opcion" onclick="showPub()">Públicos</div>
+  </section>
+
+  <!-- DESCARGABLES -->
+  <section id="desc" style="display:none">
+    <div class="center">
+      <div class="back-btn" onclick="volver()">← Volver al menú</div>
+    </div>
+    <h1>Descargables</h1>
+    <div class="grid">
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/kkInQEAJct?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Tablero Digital</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/znJhCAF0eN?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Resultado Digitalización</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/svJIgIrKEe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare&bookmarkGuid=773ad640-78dc-494a-a35c-5e1e18373956">Promociones · Misiones · Gana Gana</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/NebBu57MLe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Multicategorías</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/8DGtgGWglw?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">ICE</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/3zBmBfffsk?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Hogar · Verdes y Grises</a>
+    </div>
+  </section>
+
+  <!-- PUBLICOS -->
+  <section id="pub" style="display:none">
+    <div class="center">
+      <div class="back-btn" onclick="volver()">← Volver al menú</div>
+    </div>
+    <h1>Tableros Públicos</h1>
+    <div class="grid">
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiODdlNTk2NjYtYTJkYy00OTk3LTljM2UtZjcyNTg0YjdjNGI5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">Tablero Digital</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzk4OTJiYzUtMzA3OS00Njg5LWFjMTYtNjkxYWUyMTcxNmJiIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">Resultado Digitalización</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYzAyYWI1N2YtMDIwNC00ZDlhLWE3NWUtZjhhNDY2MDRkZTIzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">Promociones · Misiones · Gana Gana</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2I3NDMxNDctNWJhNC00MDc5LWJhZDAtYjBlOWMxNzkyNGU4IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">Multicategorías</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMjZlZmVhZjUtZmJmYy00NDg3LWFlOTktZjcwMTA2Yzc3ZWI3IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">YOMP</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYjlkMWNkZjYtZWJjOS00YmU4LTk3MzgtZDQyYmQyYzdjYjhiIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">ICE</a>
+      <a class="card-btn" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiODU1OWQwMjEtYzRiMy00NDFlLTg4NTMtZDg5YjQyZmQ1OTE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">Hogar · Verdes · Azules · Grises</a>
+    </div>
+  </section>
+  `;
+}
+
+function showDesc(){
+  document.getElementById("menu").style.display="none";
+  document.getElementById("desc").style.display="block";
+}
+
+function showPub(){
+  document.getElementById("menu").style.display="none";
+  document.getElementById("pub").style.display="block";
+}
+
+function volver(){
+  document.getElementById("desc").style.display="none";
+  document.getElementById("pub").style.display="none";
+  document.getElementById("menu").style.display="flex";
+}
 </script>
+
 </body>
 </html>
