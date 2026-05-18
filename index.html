@@ -72,7 +72,10 @@ main{padding-top:80px}
   cursor:pointer;
 }
 
-.error{color:#ffb3b3;font-size:.9rem}
+.error{
+  color:#ffb3b3;
+  font-size:.9rem;
+}
 
 .opciones{
   height:calc(100vh - 80px);
@@ -95,7 +98,10 @@ main{padding-top:80px}
   cursor:pointer;
 }
 
-h1{text-align:center;margin:1rem 0}
+h1{
+  text-align:center;
+  margin:1rem 0;
+}
 
 .grid{
   display:grid;
@@ -136,8 +142,14 @@ h1{text-align:center;margin:1rem 0}
   cursor:pointer;
   font-weight:bold;
 }
-.back-btn:hover{background:#222}
-.center{text-align:center}
+
+.back-btn:hover{
+  background:#222;
+}
+
+.center{
+  text-align:center;
+}
 </style>
 </head>
 
@@ -146,133 +158,228 @@ h1{text-align:center;margin:1rem 0}
 <header>CONECTA · COCA-COLA</header>
 
 <main id="main">
+
   <!-- LOGIN -->
   <section class="login">
     <div class="login-box">
       <h2>Acceso</h2>
-      <input type="password" id="password" placeholder="Contraseña">
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Contraseña"
+      >
+
       <button onclick="login()">Entrar</button>
+
       <div id="error" class="error"></div>
     </div>
   </section>
+
 </main>
 
 <script>
+
 const PASS = "Conecta2025";
 const main = document.getElementById("main");
 
 function login(){
+
   const p = document.getElementById("password").value;
+
   if(p !== PASS){
-    document.getElementById("error").innerText = "Contraseña incorrecta";
+    document.getElementById("error").innerText =
+      "Contraseña incorrecta";
     return;
   }
 
   main.innerHTML = `
+
   <!-- MENU -->
   <section id="menu" class="opciones">
-    <div class="opcion" onclick="showDesc()">Descargables</div>
-    <div class="opcion" onclick="showPub()">Públicos</div>
+
+    <div class="opcion" onclick="showDesc()">
+      Descargables
+    </div>
+
+    <div class="opcion" onclick="showPub()">
+      Públicos
+    </div>
+
   </section>
 
   <!-- DESCARGABLES -->
   <section id="desc" style="display:none">
+
     <div class="center">
-      <div class="back-btn" onclick="volver()">← Volver al menú</div>
+      <div class="back-btn" onclick="volver()">
+        ← Volver al menú
+      </div>
     </div>
+
     <h1>Descargables</h1>
+
     <div class="grid">
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/kkInQEAJct?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Tablero Digital</a>
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/znJhCAF0eN?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Resultado Digitalización</a>
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/svJIgIrKEe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare&bookmarkGuid=773ad640-78dc-494a-a35c-5e1e18373956">Promociones · Misiones · Gana Gana</a>
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/NebBu57MLe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Multicategorías</a>
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/8DGtgGWglw?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">ICE</a>
-      <a class="card-btn" target="_blank" href="https://app.powerbi.com/links/3zBmBfffsk?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">Hogar · Verdes y Grises</a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/kkInQEAJct?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">
+        Tablero Digital
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/znJhCAF0eN?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">
+        Resultado Digitalización
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/svJIgIrKEe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare&bookmarkGuid=773ad640-78dc-494a-a35c-5e1e18373956">
+        Promociones · Misiones · Gana Gana
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/NebBu57MLe?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">
+        Multicategorías
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/8DGtgGWglw?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">
+        ICE
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/links/3zBmBfffsk?ctid=422ced30-fc20-4e2b-874d-c2f2b6a6fc56&pbi_source=linkShare">
+        Hogar · Verdes y Grises
+      </a>
+
     </div>
   </section>
 
-<!-- PUBLICOS -->
-<section id="pub" style="display:none">
-  <div class="center">
-    <div class="back-btn" onclick="volver()">← Volver al menú</div>
-  </div>
-  <h1>Tableros Públicos</h1>
-  <div class="grid">
+  <!-- PUBLICOS -->
+  <section id="pub" style="display:none">
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiYTY4MmYwOTgtZWM2Yy00YzMxLTljODAtYTM3YWRmYTBlYmM2IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Tablero Digital
-    </a>
+    <div class="center">
+      <div class="back-btn" onclick="volver()">
+        ← Volver al menú
+      </div>
+    </div>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Resultado Digitalización
-    </a>
+    <h1>Tableros Públicos</h1>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiOTFhZTg5OTUtZTc0MS00NjEyLTk4YTUtMWRlYTM0ODUzNmVlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Promociones
-    </a>
+    <div class="grid">
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiZmI3MzU0NWItNDBiZS00Mjg3LWFkYjktOWRiZWRmZDBhMzMzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Multicategorías
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYTY4MmYwOTgtZWM2Yy00YzMxLTljODAtYTM3YWRmYTBlYmM2IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Tablero Digital
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiN2UwNjhjNjUtMGMwOC00ZDg0LWEzZTYtYmRkMWQ0NTY3MDY4IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      YOMP
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Resultado Digitalización
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiZmQyY2YyNzItNDU3NS00NDAzLTllOTYtZWI5NzkwNGI1YTFlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      ICE
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiOTFhZTg5OTUtZTc0MS00NjEyLTk4YTUtMWRlYTM0ODUzNmVlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Promociones
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiYmFhN2YyNjYtNmEwNy00NTMzLWE4MWQtNzIzMDU2NjBiZWEyIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Hogar · Verdes
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZmI3MzU0NWItNDBiZS00Mjg3LWFkYjktOWRiZWRmZDBhMzMzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Multicategorías
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiZTNjYjk1ZTgtNDIxZS00NjZhLWFkMTItZDg1NGFiZGQ0ZjVkIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      POST MORTEM 24 vs 25
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiN2UwNjhjNjUtMGMwOC00ZDg0LWEzZTYtYmRkMWQ0NTY3MDY4IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        YOMP
+      </a>
 
-    <!-- NUEVOS -->
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZmQyY2YyNzItNDU3NS00NDAzLTllOTYtZWI5NzkwNGI1YTFlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        ICE
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiYzBjNzc3MzItN2I5Mi00MjBiLWIwYzYtNWJkYjZiZTMyYTFjIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Tablero Hogar
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYmFhN2YyNjYtNmEwNy00NTMzLWE4MWQtNzIzMDU2NjBiZWEyIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Hogar · Verdes
+      </a>
 
-    <a class="card-btn" target="_blank"
-      href="https://app.powerbi.com/view?r=eyJrIjoiNGY5MDNiYTItMzU2OC00OTZmLTk1M2QtZTY2NTE5Y2I2MjU1IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-      Pedido Sugerido Interno
-    </a>
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZTNjYjk1ZTgtNDIxZS00NjZhLWFkMTItZDg1NGFiZGQ0ZjVkIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        POST MORTEM 24 vs 25
+      </a>
 
-  </div>
-</section>
+      <!-- NUEVOS -->
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYzBjNzc3MzItN2I5Mi00MjBiLWIwYzYtNWJkYjZiZTMyYTFjIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Tablero Hogar
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiNGY5MDNiYTItMzU2OC00OTZmLTk1M2QtZTY2NTE5Y2I2MjU1IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Pedido Sugerido Interno
+      </a>
+
+      <a
+        class="card-btn"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYmM5NTg1NzgtOTk3ZC00OTAwLWJhOWQtM2NlYjgwZDUzMTk5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        GI
+      </a>
+
+    </div>
+  </section>
   `;
 }
 
 function showDesc(){
-  document.getElementById("menu").style.display="none";
-  document.getElementById("desc").style.display="block";
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("desc").style.display = "block";
 }
 
 function showPub(){
-  document.getElementById("menu").style.display="none";
-  document.getElementById("pub").style.display="block";
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("pub").style.display = "block";
 }
 
 function volver(){
-  document.getElementById("desc").style.display="none";
-  document.getElementById("pub").style.display="none";
-  document.getElementById("menu").style.display="flex";
+  document.getElementById("desc").style.display = "none";
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("menu").style.display = "flex";
 }
+
 </script>
 
 </body>
 </html>
-
