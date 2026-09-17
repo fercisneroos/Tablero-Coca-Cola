@@ -126,6 +126,7 @@ h1{
   border:3px solid white;
   text-decoration:none;
   transition:.3s;
+  cursor:pointer;
 }
 
 .card-btn:hover{
@@ -286,12 +287,11 @@ function login(){
         Tablero Digital
       </a>
 
-      <a
+      <div
         class="card-btn"
-        target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        onclick="showDigitalOpciones()">
         Resultado Digitalización
-      </a>
+      </div>
 
       <a
         class="card-btn"
@@ -372,6 +372,38 @@ function login(){
 
     </div>
   </section>
+
+  <!-- SUBMENU DIGITALIZACIÓN (GENERAL) -->
+  <section id="digital-options" style="display:none">
+
+    <div class="center">
+      <div class="back-btn" onclick="volverAGeneral()">
+        ← Volver a General
+      </div>
+    </div>
+
+    <h1>Resultado Digitalización</h1>
+
+    <div class="opciones">
+
+      <a
+        class="opcion"
+        style="text-decoration:none;"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Histórico
+      </a>
+
+      <a
+        class="opcion"
+        style="text-decoration:none;"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYjViZmQ0OGQtYzdhNC00NzllLTk4MzMtZGI1ZWZjYzJiMTk0IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Actual
+      </a>
+
+    </div>
+  </section>
   `;
 }
 
@@ -385,9 +417,20 @@ function showPub(){
   document.getElementById("pub").style.display = "block";
 }
 
+function showDigitalOpciones(){
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("digital-options").style.display = "block";
+}
+
+function volverAGeneral(){
+  document.getElementById("digital-options").style.display = "none";
+  document.getElementById("pub").style.display = "block";
+}
+
 function volver(){
   document.getElementById("desc").style.display = "none";
   document.getElementById("pub").style.display = "none";
+  document.getElementById("digital-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
