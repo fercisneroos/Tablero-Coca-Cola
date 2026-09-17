@@ -96,6 +96,19 @@ main{padding-top:80px}
   font-size:1.8rem;
   font-weight:bold;
   cursor:pointer;
+  color:white;
+  text-decoration:none;
+  border:3px solid white;
+  box-sizing:border-box;
+  transition:.3s;
+}
+
+.opcion:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+.opcion:visited, .opcion:active, .opcion:link{
+  color:white;
 }
 
 h1{
@@ -131,6 +144,10 @@ h1{
 
 .card-btn:hover{
   transform:translateY(-6px) scale(1.05);
+}
+
+.card-btn:visited, .card-btn:active, .card-btn:link{
+  color:white;
 }
 
 .back-btn{
@@ -280,18 +297,18 @@ function login(){
 
     <div class="grid">
 
+      <div
+        class="card-btn"
+        onclick="showTableroDigitalOpciones()">
+        Tablero Digital
+      </div>
+
       <a
         class="card-btn"
         target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiYTY4MmYwOTgtZWM2Yy00YzMxLTljODAtYTM3YWRmYTBlYmM2IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
-        Tablero Digital
-      </a>
-
-      <div
-        class="card-btn"
-        onclick="showDigitalOpciones()">
+        href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
         Resultado Digitalización
-      </div>
+      </a>
 
       <a
         class="card-btn"
@@ -373,8 +390,8 @@ function login(){
     </div>
   </section>
 
-  <!-- SUBMENU DIGITALIZACIÓN (GENERAL) -->
-  <section id="digital-options" style="display:none">
+  <!-- SUBMENU TABLERO DIGITAL (GENERAL) -->
+  <section id="tablero-options" style="display:none">
 
     <div class="center">
       <div class="back-btn" onclick="volverAGeneral()">
@@ -382,21 +399,19 @@ function login(){
       </div>
     </div>
 
-    <h1>Resultado Digitalización</h1>
+    <h1>Tablero Digital</h1>
 
     <div class="opciones">
 
       <a
         class="opcion"
-        style="text-decoration:none;"
         target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiY2Q2NGQ2MjAtM2ZlNy00NjEyLWI3OTAtZDI3YzNiMTRjOGE5IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        href="https://app.powerbi.com/view?r=eyJrIjoiYTY4MmYwOTgtZWM2Yy00YzMxLTljODAtYTM3YWRmYTBlYmM2IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
         Histórico
       </a>
 
       <a
         class="opcion"
-        style="text-decoration:none;"
         target="_blank"
         href="https://app.powerbi.com/view?r=eyJrIjoiYjViZmQ0OGQtYzdhNC00NzllLTk4MzMtZGI1ZWZjYzJiMTk0IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
         Actual
@@ -417,20 +432,20 @@ function showPub(){
   document.getElementById("pub").style.display = "block";
 }
 
-function showDigitalOpciones(){
+function showTableroDigitalOpciones(){
   document.getElementById("pub").style.display = "none";
-  document.getElementById("digital-options").style.display = "block";
+  document.getElementById("tablero-options").style.display = "block";
 }
 
 function volverAGeneral(){
-  document.getElementById("digital-options").style.display = "none";
+  document.getElementById("tablero-options").style.display = "none";
   document.getElementById("pub").style.display = "block";
 }
 
 function volver(){
   document.getElementById("desc").style.display = "none";
   document.getElementById("pub").style.display = "none";
-  document.getElementById("digital-options").style.display = "none";
+  document.getElementById("tablero-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
