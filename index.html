@@ -101,6 +101,8 @@ main{padding-top:80px}
   border:3px solid white;
   box-sizing:border-box;
   transition:.3s;
+  text-align:center;
+  padding:1rem;
 }
 
 .opcion:hover{
@@ -317,12 +319,11 @@ function login(){
         Promociones
       </a>
 
-      <a
+      <div
         class="card-btn"
-        target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiZmI3MzU0NWItNDBiZS00Mjg3LWFkYjktOWRiZWRmZDBhMzMzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        onclick="showMulticategoriasOpciones()">
         Multicategorías
-      </a>
+      </div>
 
       <a
         class="card-btn"
@@ -419,6 +420,36 @@ function login(){
 
     </div>
   </section>
+
+  <!-- SUBMENU MULTICATEGORÍAS (GENERAL) -->
+  <section id="multicategorias-options" style="display:none">
+
+    <div class="center">
+      <div class="back-btn" onclick="volverAGeneral()">
+        ← Volver a General
+      </div>
+    </div>
+
+    <h1>Multicategorías</h1>
+
+    <div class="opciones">
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZmI3MzU0NWItNDBiZS00Mjg3LWFkYjktOWRiZWRmZDBhMzMzIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Histórico Abril - Septiembre 2026
+      </a>
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiZDU1Zjg4YWItMjI0My00MTk1LTg1YjAtMjA3MjAzZjRmMWNmIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Actual
+      </a>
+
+    </div>
+  </section>
   `;
 }
 
@@ -437,8 +468,14 @@ function showTableroDigitalOpciones(){
   document.getElementById("tablero-options").style.display = "block";
 }
 
+function showMulticategoriasOpciones(){
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("multicategorias-options").style.display = "block";
+}
+
 function volverAGeneral(){
   document.getElementById("tablero-options").style.display = "none";
+  document.getElementById("multicategorias-options").style.display = "none";
   document.getElementById("pub").style.display = "block";
 }
 
@@ -446,6 +483,7 @@ function volver(){
   document.getElementById("desc").style.display = "none";
   document.getElementById("pub").style.display = "none";
   document.getElementById("tablero-options").style.display = "none";
+  document.getElementById("multicategorias-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
