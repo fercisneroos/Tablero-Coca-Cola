@@ -83,6 +83,9 @@ main{padding-top:80px}
   justify-content:center;
   align-items:center;
   gap:3rem;
+  flex-wrap:wrap;
+  padding:2rem;
+  box-sizing:border-box;
 }
 
 .opcion{
@@ -299,12 +302,14 @@ function login(){
 
     <div class="grid">
 
+      <!-- 1. Tablero Digital -->
       <div
         class="card-btn"
         onclick="showTableroDigitalOpciones()">
         Tablero Digital
       </div>
 
+      <!-- 2. Resultado Digitalización -->
       <a
         class="card-btn"
         target="_blank"
@@ -312,6 +317,7 @@ function login(){
         Resultado Digitalización
       </a>
 
+      <!-- 3. Promociones -->
       <a
         class="card-btn"
         target="_blank"
@@ -319,12 +325,21 @@ function login(){
         Promociones
       </a>
 
+      <!-- 4. Multicategorías -->
       <div
         class="card-btn"
         onclick="showMulticategoriasOpciones()">
         Multicategorías
       </div>
 
+      <!-- 5. Mapas Rutas (Nuevo) -->
+      <div
+        class="card-btn"
+        onclick="showMapasRutasOpciones()">
+        Mapas Rutas
+      </div>
+
+      <!-- 6. YOMP -->
       <a
         class="card-btn"
         target="_blank"
@@ -332,6 +347,7 @@ function login(){
         YOMP
       </a>
 
+      <!-- 7. ICE -->
       <a
         class="card-btn"
         target="_blank"
@@ -339,6 +355,7 @@ function login(){
         ICE
       </a>
 
+      <!-- 8. Hogar · Verdes -->
       <a
         class="card-btn"
         target="_blank"
@@ -346,6 +363,7 @@ function login(){
         Hogar · Verdes
       </a>
 
+      <!-- 9. POST MORTEM 24 vs 25 -->
       <a
         class="card-btn"
         target="_blank"
@@ -353,6 +371,7 @@ function login(){
         POST MORTEM 24 vs 25
       </a>
 
+      <!-- 10. Tablero Hogar -->
       <a
         class="card-btn"
         target="_blank"
@@ -360,6 +379,7 @@ function login(){
         Tablero Hogar
       </a>
 
+      <!-- 11. Pedido Sugerido Interno -->
       <a
         class="card-btn"
         target="_blank"
@@ -367,6 +387,7 @@ function login(){
         Pedido Sugerido Interno
       </a>
 
+      <!-- 12. GI -->
       <a
         class="card-btn"
         target="_blank"
@@ -374,6 +395,7 @@ function login(){
         GI
       </a>
 
+      <!-- 13. Pronostico -->
       <a
         class="card-btn"
         target="_blank"
@@ -381,6 +403,7 @@ function login(){
         Pronostico
       </a>
 
+      <!-- 14. Kiosko Retornabilidad -->
       <a
         class="card-btn"
         target="_blank"
@@ -450,6 +473,43 @@ function login(){
 
     </div>
   </section>
+
+  <!-- SUBMENU MAPAS RUTAS (GENERAL) -->
+  <section id="mapas-options" style="display:none">
+
+    <div class="center">
+      <div class="back-btn" onclick="volverAGeneral()">
+        ← Volver a General
+      </div>
+    </div>
+
+    <h1>Mapas Rutas</h1>
+
+    <div class="opciones">
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://www.google.com/maps/d/edit?mid=1C0IkbhYVsO-oMt7YmEM-iw8xpr7TQLU&ll=19.646257325754277%2C-103.6380971254397&z=9">
+        Tradicional
+      </a>
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://www.google.com/maps/d/edit?mid=1i0IZLjkp5E9wtdaxIvzUjTdGOKeL0x0&userstoinvite=rafaelavaloscocacola%40gmail.com&sharingaction=manageaccess&role=reader&ll=19.258556146909775%2C-103.73067752102997&z=15">
+        OP
+      </a>
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://www.google.com/maps/d/edit?mid=1WyurvvCWbEYytZaYbg6mWuoSMWrvdZQ&ll=19.232968504187824%2C-103.70531807181935&z=15">
+        MODERNO
+      </a>
+
+    </div>
+  </section>
   `;
 }
 
@@ -473,9 +533,15 @@ function showMulticategoriasOpciones(){
   document.getElementById("multicategorias-options").style.display = "block";
 }
 
+function showMapasRutasOpciones(){
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("mapas-options").style.display = "block";
+}
+
 function volverAGeneral(){
   document.getElementById("tablero-options").style.display = "none";
   document.getElementById("multicategorias-options").style.display = "none";
+  document.getElementById("mapas-options").style.display = "none";
   document.getElementById("pub").style.display = "block";
 }
 
@@ -484,6 +550,7 @@ function volver(){
   document.getElementById("pub").style.display = "none";
   document.getElementById("tablero-options").style.display = "none";
   document.getElementById("multicategorias-options").style.display = "none";
+  document.getElementById("mapas-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
