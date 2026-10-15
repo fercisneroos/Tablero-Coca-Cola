@@ -332,7 +332,7 @@ function login(){
         Multicategorías
       </div>
 
-      <!-- 5. Mapas Rutas (Nuevo) -->
+      <!-- 5. Mapas Rutas -->
       <div
         class="card-btn"
         onclick="showMapasRutasOpciones()">
@@ -380,12 +380,11 @@ function login(){
       </a>
 
       <!-- 11. Pedido Sugerido Interno -->
-      <a
+      <div
         class="card-btn"
-        target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiNGY5MDNiYTItMzU2OC00OTZmLTk1M2QtZTY2NTE5Y2I2MjU1IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        onclick="showPedidoSugeridoOpciones()">
         Pedido Sugerido Interno
-      </a>
+      </div>
 
       <!-- 12. GI -->
       <a
@@ -510,6 +509,36 @@ function login(){
 
     </div>
   </section>
+
+  <!-- SUBMENU PEDIDO SUGERIDO INTERNO (GENERAL) -->
+  <section id="pedido-options" style="display:none">
+
+    <div class="center">
+      <div class="back-btn" onclick="volverAGeneral()">
+        ← Volver a General
+      </div>
+    </div>
+
+    <h1>Pedido Sugerido Interno</h1>
+
+    <div class="opciones">
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiNGY5MDNiYTItMzU2OC00OTZmLTk1M2QtZTY2NTE5Y2I2MjU1IiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Histórico
+      </a>
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://app.powerbi.com/view?r=eyJrIjoiYmFhN2YyNjYtNmEwNy00NTMzLWE8MWQtNzIzMDU2NjBiZWEyIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        Actual
+      </a>
+
+    </div>
+  </section>
   `;
 }
 
@@ -538,10 +567,16 @@ function showMapasRutasOpciones(){
   document.getElementById("mapas-options").style.display = "block";
 }
 
+function showPedidoSugeridoOpciones(){
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("pedido-options").style.display = "block";
+}
+
 function volverAGeneral(){
   document.getElementById("tablero-options").style.display = "none";
   document.getElementById("multicategorias-options").style.display = "none";
   document.getElementById("mapas-options").style.display = "none";
+  document.getElementById("pedido-options").style.display = "none";
   document.getElementById("pub").style.display = "block";
 }
 
@@ -551,6 +586,7 @@ function volver(){
   document.getElementById("tablero-options").style.display = "none";
   document.getElementById("multicategorias-options").style.display = "none";
   document.getElementById("mapas-options").style.display = "none";
+  document.getElementById("pedido-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
