@@ -445,6 +445,13 @@ function login(){
         Kiosko Retornabilidad
       </a>
 
+      <!-- 15. Plan de Lealtad (Nuevo) -->
+      <div
+        class="card-btn"
+        onclick="showPlanLealtadOpciones()">
+        Plan de Lealtad
+      </div>
+
     </div>
   </section>
 
@@ -598,8 +605,31 @@ function login(){
       <a
         class="opcion"
         target="_blank"
-        href="https://app.powerbi.com/view?r=eyJrIjoiYmY6N2I5ZmUtNmUyYy00MDI0LTlkODAtNWIwYTc4NDczZTFlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
+        href="https://app.powerbi.com/view?r=eyJrIjoiYmY2N2I5ZmUtNmUyYy00MDI0LTlkODAtNWIwYTc4NDczZTFlIiwidCI6IjQyMmNlZDMwLWZjMjAtNGUyYi04NzRkLWMyZjJiNmE2ZmM1NiIsImMiOjR9">
         Actual
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SUBMENU PLAN DE LEALTAD (GENERAL) -->
+  <section id="plan-lealtad-options" style="display:none">
+
+    <div class="center">
+      <div class="back-btn" onclick="volverAGeneral()">
+        ← Volver a General
+      </div>
+    </div>
+
+    <h1>Plan de Lealtad</h1>
+
+    <div class="opciones">
+
+      <a
+        class="opcion"
+        target="_blank"
+        href="https://claude.ai/artifact/1BFetSVdVWnEttK1pKhdCF">
+        Avance Actividades Plan de Lealtad
       </a>
 
     </div>
@@ -647,6 +677,11 @@ function showPedidoSugeridoOpciones(){
   document.getElementById("pedido-options").style.display = "block";
 }
 
+function showPlanLealtadOpciones(){
+  document.getElementById("pub").style.display = "none";
+  document.getElementById("plan-lealtad-options").style.display = "block";
+}
+
 function volverADescargables(){
   document.getElementById("yomp-desc-options").style.display = "none";
   document.getElementById("desc").style.display = "block";
@@ -658,6 +693,7 @@ function volverAGeneral(){
   document.getElementById("mapas-options").style.display = "none";
   document.getElementById("yomp-gen-options").style.display = "none";
   document.getElementById("pedido-options").style.display = "none";
+  document.getElementById("plan-lealtad-options").style.display = "none";
   document.getElementById("pub").style.display = "block";
 }
 
@@ -670,6 +706,7 @@ function volver(){
   document.getElementById("mapas-options").style.display = "none";
   document.getElementById("yomp-gen-options").style.display = "none";
   document.getElementById("pedido-options").style.display = "none";
+  document.getElementById("plan-lealtad-options").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
